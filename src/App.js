@@ -7,19 +7,19 @@ const items = [
     content: 'React is a front end javascript framework',
   },
   {
-    title: 'What is React?',
-    content: 'React is a front end javascript framework',
+    title: 'Why use React?',
+    content: 'React is a favorite library among engineers',
   },
   {
-    title: 'What is React?',
-    content: 'React is a front end javascript framework',
+    title: 'How do you use React?',
+    content: 'You use React by creating components',
   },
 ];
 
 export default () => {
   return (
     <div>
-      <Accordion />
+      <Accordion items={items} />
     </div>
   );
 };
