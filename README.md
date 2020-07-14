@@ -9,4 +9,4 @@ Styling: Semantic-ui React Accordion --> https://react.semantic-ui.com/modules/a
 Non-reusable example: The semantic-ui example is without a reusable component, where all the content is coded out for every single item --> https://react.semantic-ui.com/modules/accordion/#types-styled
 
 ![picture](Accordion-Demo.png)
-![picture](Accordion-Demo2.png)
+![picture](Accordion-Demo 2.png)
