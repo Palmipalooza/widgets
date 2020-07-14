@@ -13,7 +13,7 @@ const Accordion = ({ items }) => {
     const active = index === activeIndex ? 'active' : '';
 
     return (
-      <React.Fragment key={item.title}>
+      <div className="ui styled accordion" key={item.title}>
         <div
           className={`${active} title`}
           // same as
@@ -26,7 +26,7 @@ const Accordion = ({ items }) => {
         <div className={`${active} content`}>
           <p>{item.content}</p>
         </div>
-      </React.Fragment>
+      </div>
     );
   });
 

@@ -3,16 +3,16 @@ import Accordion from './Components/Accordion';
 
 const items = [
   {
-    title: 'What is React?',
-    content: 'React is a front end javascript framework',
+    title: 'What is an accordion?',
+    content: 'Clicking an item expands its details',
   },
   {
-    title: 'Why use React?',
-    content: 'React is a favorite library among engineers',
+    title: 'Built with React',
+    content: 'Reusable component that manages state with React Hooks',
   },
   {
-    title: 'How do you use React?',
-    content: 'You use React by creating components',
+    title: 'Styled with Semantic UI',
+    content: 'the active keyword toggles the clicked item',
   },
 ];
 
