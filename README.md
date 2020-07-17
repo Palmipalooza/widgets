@@ -12,7 +12,7 @@ Non-reusable example: The semantic-ui example is without a reusable component, w
 
 ![picture](Accordion-Demo.png)
 
-Search Widget - text box for user input. Pings wikipedia api and a list of titles and summaries.
+Search Widget - text box for user input. Pings wikipedia api and a list of titles and summaries. Search component keeps track of this piece of state with hooks.
 
 Hooks Used: useState, useEffect
 
