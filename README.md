@@ -2,7 +2,7 @@ Four separate widgets in one application
 
 Use of React Hooks to build reusable components.
 
-Accordion Widget - shows only one item at a time. When one item is clicked, the details about it are expanded while the details about the previously open item is collapsed. Accordion component keeps track of this piece of state with react hooks. Accordion component can be reused for a large list of information.
+ACCORDION Widget - shows only one item at a time. When one item is clicked, the details about it are expanded while the details about the previously open item is collapsed. Accordion component keeps track of this piece of state with react hooks. Accordion component can be reused for a large list of information.
 
 Hooks Used: useState
 
@@ -12,9 +12,10 @@ Non-reusable example: The semantic-ui example is without a reusable component, w
 
 ![picture](Accordion-Demo.png)
 
-Search Widget - text box for user input. Pings wikipedia api and a list of titles and summaries. Search component keeps track of this piece of state with hooks.
+SEARCH Widget - text box for user input. Pings wikipedia api and a list of titles and summaries. Search component keeps track of this piece of state with hooks. Reusable - Allows for user input in both search term and category dropdown. Component fires off api call if a user changes the search term, category, or both.
 
 Hooks Used: useState, useEffect
+useEffect used to make an api call every time a user presses a key
 
 Dropdown Widget
 
