@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Search = () => {
-  const [term, setTerm] = useState('Welcome');
+  const [term, setTerm] = useState('jQuery is Stupid');
   const [results, setResults] = useState([]);
 
   useEffect(() => {
@@ -20,14 +20,15 @@ const Search = () => {
       setResults(data.query.search);
     };
 
-    search();
+    setTimeout(() => {
+      if (term) {
+        search();
+      }
+    }, 500);
+    // ^when there is user input, set a timer for 500 miliseconds, the make api call
+    // unless there is another input (keypress), then cancel previous timer and set new timer for 500 milliseconds
   }, [term]);
-  // normally see [] or [with something inside it that triggers re renders when it changes]
-
-  // Class Based Example:
-  // setTerm(event) {
-  //   this.setState({ term: event.target.value })
-  // }
+  // ^normally see [] or [with something inside it that triggers re renders when it changes]
 
   const renderedResults = results.map(result => {
     return (
