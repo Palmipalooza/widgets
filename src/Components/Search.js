@@ -6,27 +6,34 @@ const Search = () => {
   const [term, setTerm] = useState('jQuery is Stupid');
   const [results, setResults] = useState([]);
 
+  // useEffect invoked when component first renders and anytime the term piece of state changes
   useEffect(() => {
-    const search = async () => {
-      const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
-        params: {
-          action: 'query',
-          list: 'search',
-          origin: '*',
-          format: 'json',
-          srsearch: term,
-        },
-      });
-      setResults(data.query.search);
+    console.log('initial render or term was changed');
+
+    // cleanup function will get invoked whenever the component re-renders
+    return () => {
+      console.log('CLEANUP');
     };
 
-    setTimeout(() => {
-      if (term) {
-        search();
-      }
-    }, 500);
-    // ^when there is user input, set a timer for 500 miliseconds, the make api call
-    // unless there is another input (keypress), then cancel previous timer and set new timer for 500 milliseconds
+    // const search = async () => {
+    //   const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
+    //     params: {
+    //       action: 'query',
+    //       list: 'search',
+    //       origin: '*',
+    //       format: 'json',
+    //       srsearch: term,
+    //     },
+    //   });
+    //   setResults(data.query.search);
+    // };
+
+    // // THROTTLE api requests below by: waiting 500 milliseconds after user input (keystroke) before api call (repeats until no user input for 500 milliseconds)
+    // const timeoutId = setTimeout(() => {
+    //   if (term) {
+    //     search();
+    //   }
+    // }, 500);
   }, [term]);
   // ^normally see [] or [with something inside it that triggers re renders when it changes]
 
