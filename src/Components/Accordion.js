@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 
 const Accordion = ({ items }) => {
+  // useState returns a stateful value (this.state.value) and a function to update it (this.setState{ value: newValue })
   const [activeIndex, setActiveIndex] = useState(null);
 
   const onTitleClicked = index => {

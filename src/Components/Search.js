@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Search = () => {
-  const [term, setTerm] = useState('jQuery is Stupid');
+  const [term, setTerm] = useState('Welcome');
   const [results, setResults] = useState([]);
 
   // useEffect invoked when component first renders and anytime the term piece of state changes
@@ -22,15 +22,20 @@ const Search = () => {
     };
 
     // THROTTLE api requests below by: waiting 500 milliseconds after user input (keystroke) before api call (repeats until no user input for 500 milliseconds)
-    const timeoutId = setTimeout(() => {
-      if (term) {
-        search();
-      }
-    }, 500);
+    if (term && !results.length) {
+      search();
+    } else {
+      const timeoutId = setTimeout(() => {
+        if (term) {
+          search();
+        }
+      }, 500);
 
-    return () => {
-      clearTimeout(timeoutId);
-    };
+      // cleanup function returned by useEffect
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
   }, [term]);
   // ^normally see [] or [with something inside it that triggers re renders when it changes]
 

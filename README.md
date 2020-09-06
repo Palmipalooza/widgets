@@ -17,10 +17,16 @@ SEARCH Widget - text box for user input. Pings wikipedia api and a list of title
 Hooks Used: useState, useEffect
 useEffect used to make an api call every time a user presses a key
 
-Dropdown Widget
+![picture](Search-Demo.png)
+
+DROPDOWN Widget - Reusable. Shows a list of color options that a user can select from the dropdown menu. Selecting a different color updates text color.
 
 Hooks Used: useState, useEffect, useRef
 
 Translate Widget
 
 Hooks Used: useState, useEffect, useRef
+
+RESOURCES:
+useState: https://reactjs.org/docs/hooks-reference.html#usestate
+useEffect: https://reactjs.org/docs/hooks-reference.html#useeffect
