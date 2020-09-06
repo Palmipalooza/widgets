@@ -19,7 +19,7 @@ useEffect used to make an api call every time a user presses a key
 
 ![picture](Search-Demo.png)
 
-DROPDOWN Widget - Reusable. Shows a list of color options that a user can select from the dropdown menu. Selecting a different color updates text color.
+DROPDOWN Widget - Reusable, options provided in the dropdown are customizable/passed as props. Shows a list of color options that a user can select from the dropdown menu. Selecting a different color updates text color. App component holds the selection piece of state and passes the current selection down as props.
 
 Hooks Used: useState, useEffect, useRef
 
@@ -28,5 +28,7 @@ Translate Widget
 Hooks Used: useState, useEffect, useRef
 
 RESOURCES:
+
 useState: https://reactjs.org/docs/hooks-reference.html#usestate
+
 useEffect: https://reactjs.org/docs/hooks-reference.html#useeffect
