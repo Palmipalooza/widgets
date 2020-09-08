@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Accordion from './Components/Accordion';
 import Search from './Components/Search';
 import Dropdown from './Components/Dropdown';
@@ -35,12 +35,19 @@ const options = [
   },
 ];
 
+// create piece of state in App to keep track of what option is currently selected -> to allow for multiple instances of Dropdown component
 export default () => {
+  const [selected, setSelected] = useState(options[0]);
+
   return (
     <div>
       {/* <Accordion items={items} /> */}
       {/* <Search /> */}
-      <Dropdown options={options} />
+      <Dropdown
+        selected={selected}
+        onSelectedChange={setSelected}
+        options={options}
+      />
     </div>
   );
 };
