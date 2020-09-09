@@ -23,7 +23,7 @@ DROPDOWN Widget - Reusable, options provided in the dropdown are customizable/pa
 
 Hooks Used: useState, useEffect, useRef
 
-Translate Widget
+TRANSLATE Widget
 
 Hooks Used: useState, useEffect, useRef
 

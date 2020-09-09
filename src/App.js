@@ -38,6 +38,8 @@ const options = [
 // create piece of state in App to keep track of what option is currently selected -> to allow for multiple instances of Dropdown component
 export default () => {
   const [selected, setSelected] = useState(options[0]);
+  // ^ is like: this.state = {selected: options[0]}
+  // ^ setSelected = (event) => { this.setState({ selected: event.target.value }) }
 
   return (
     <div>
