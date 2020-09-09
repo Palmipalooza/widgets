@@ -2,6 +2,11 @@ import React from 'react';
 
 function Dropdown({ options, selected, onSelectedChange }) {
   const renderedOptions = options.map(option => {
+    // check if selected is the same as the option we are currently iterating over
+    if (option.value === selected.value) {
+      return null;
+    }
+
     return (
       <div
         key={option.value}
@@ -20,7 +25,7 @@ function Dropdown({ options, selected, onSelectedChange }) {
         <div className="ui selection dropdown visible active">
           <i className="dropdown icon"></i>
           {/* semantic ui takes i elements with icon className and shows an icon (i for icon, not italics) */}
-          <div className="text">Selected: {selected.label}</div>
+          <div className="text">{selected.label}</div>
           <div className="menu visible transition">{renderedOptions}</div>
         </div>
       </div>
