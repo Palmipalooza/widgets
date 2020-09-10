@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Dropdown({ options, selected, onSelectedChange }) {
   // State keeps track of whether or not the component is open, toggle to true as oepn, false as closed
   const [open, setOpen] = useState(false);
+
+  // use useEffect hook to add event listener to the body when the Dropdown component renders
+  useEffect(() => {
+    document.body.addEventListener('click', () => {
+      console.log('CLICK');
+    });
+  }, []);
+  // ^ empty array so the function only runs on first render (not rerenders)
 
   const renderedOptions = options.map(option => {
     // check if selected is the same as the option we are currently iterating over
@@ -21,8 +29,8 @@ function Dropdown({ options, selected, onSelectedChange }) {
     );
   });
 
+  // opening and closing the dropdown: a) condtionally render renderedOptions or b) show and hide with css
   return (
-    // opening and closing the dropdown: a) condtionally render renderedOptions or b) show and hide with css
     <div className="ui form">
       <div className="field">
         <label className="label">Select a Color</label>
