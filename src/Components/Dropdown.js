@@ -7,7 +7,8 @@ function Dropdown({ options, selected, onSelectedChange }) {
   // use useEffect hook to add event listener to the body when the Dropdown component renders
   useEffect(() => {
     document.body.addEventListener('click', () => {
-      console.log('CLICK');
+      console.log('body click');
+      setOpen(false);
     });
   }, []);
   // ^ empty array so the function only runs on first render (not rerenders)
@@ -22,7 +23,10 @@ function Dropdown({ options, selected, onSelectedChange }) {
       <div
         key={option.value}
         className="item"
-        onClick={() => onSelectedChange(option)}
+        onClick={() => {
+          console.log('item clicked');
+          onSelectedChange(option);
+        }}
       >
         {option.label}
       </div>
@@ -35,7 +39,10 @@ function Dropdown({ options, selected, onSelectedChange }) {
       <div className="field">
         <label className="label">Select a Color</label>
         <div
-          onClick={() => setOpen(!open)}
+          onClick={() => {
+            console.log('dropdown clicked');
+            setOpen(!open);
+          }}
           className={`ui selection dropdown ${open ? 'visible active' : ''}`}
         >
           {/* ^ toggle "visible active" */}
